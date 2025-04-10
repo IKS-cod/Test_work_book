@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Создание книги</title>
+</head>
+<body>
+<h1>Создание книги</h1>
+
+<form th:action="@{/api/books/create}" th:method="post" th:object="${book}">
+    <table>
+        <tr>
+            <td>Код поставщика:</td>
+            <td><input type="text" th:field="*{vendorCode}"/></td>
+        </tr>
+        <tr>
+            <td>Название:</td>
+            <td><input type="text" th:field="*{title}"/></td>
+        </tr>
+        <tr>
+            <td>Год:</td>
+            <td><input type="number" th:field="*{year}"/></td>
+        </tr>
+        <tr>
+            <td>Бренд:</td>
+            <td><input type="text" th:field="*{brand}"/></td>
+        </tr>
+        <tr>
+            <td>Количество:</td>
+            <td><input type="number" th:field="*{stock}"/></td>
+        </tr>
+        <tr>
+            <td>Цена:</td>
+            <td><input type="number" step="any" th:field="*{price}"/></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Создать"/></td>
+        </tr>
+    </table>
+</form>
+
+<a href="/api/books">Назад к списку книг</a>
+</body>
+</html>
+
+

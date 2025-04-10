@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: test_work_books
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/tw2
+    username: student
+    password: chocolatefrog
+    driverClassName: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+#      create
+#      update
+    show-sql: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
